@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-cn" ng-app="exampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>exampleApp</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var myApp = angular.module("exampleApp",[]);
+        myApp.controller("dayCtrl", function($scope){
+            var dayNames = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+            $scope.day = dayNames[new Date().getDay()];
+        })
+    </script>
+</head>
+<body>
+<div class="panel" ng-controller="dayCtrl">
+    <div class="page-header">
+        <h3>AngularJS App</h3>
+    </div>
+    <h4>今天是 {{day || "（未知）"}}</h4>
+</div>
+</body>
+</html>
